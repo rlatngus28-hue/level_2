@@ -1,0 +1,50 @@
+/* properties02.css */
+.movie {
+    width:300px;/* 가로크기 */
+    height:max-content;/* 세로크기 */ /* Hug(내용에 맞춤) */
+    background-color:#E6D9C1;/* 배경색 */
+    border:1px solid#000;/* 글자색 */
+    border-radius:25px;/* 모서리 */
+    padding:40px 20px 40px 20px;/* 패딩 */
+    text-align: center;
+}
+.movie > h1 {
+    font-family:'Noto Sans KR', '맑은 고딕';/* 글꼴 */
+    font-weight:700;/* 글자굵기 */
+    font-size:1.5em;/* 글자크기 */
+    letter-spacing:-0.02em;/* 자간 */
+    line-height:1.2;/* 행간 */
+    margin:0 0 40px 0;/* 간격 */
+}
+.movie > .poster {margin:0 0 40px 0;}
+.movie > .poster > img {}
+.movie > .movie-info {}
+.movie > .movie-info >.slogan {
+    line-height:1.5;/* 행간 */
+    font-size:1em;/* 글자크기 */
+    font-weight:400;/* 글자굵기 */
+    letter-spacing:0.1em ;/* 자간 */
+    margin:0 0 20px 0;
+}
+.movie > .movie-info > .director {
+    color: #222;
+    line-height:1.0;/* 행간 */
+    font-size:0.75em;
+    font-weight: 400;
+    margin: 0 0 5px 0;
+    letter-spacing:-0.02em;
+}
+.movie > .movie-info > .actors {
+    letter-spacing:-0.02em;
+    color: #222;
+    line-height:1.5;/* 행간 */
+    font-size:0.75em;
+    font-weight: 400;
+    margin:0 0 20px 0;
+}
+.movie > .movie-info > .release {
+    font-size:0.875em;
+    font-weight:400;
+    line-height:1.0;
+    letter-spacing:-0.02em;/* 자간 */
+}
