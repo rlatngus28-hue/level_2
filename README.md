@@ -27,3 +27,43 @@
 * <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
 ## 프리텐다드 pretendard
 * <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" />
+# CSS 속성과 값, 활용 방법
+## background
+* `background-color` : 배경 색상, 실제 배경색이 없어도 **영역구분용으로** 많이 사용
+* `background-image:url()` : 배경 이미지, url() 안에는 **상대경로로** 작성
+* `background-repeat` : 배경 이미지 반복 설정, 배경 이미지가 **작은 경우만** 체크
+* `background-size` : 배경 이미지 크기 설정, 배경 이미지가 들어간 요소보다 이미지가 작거나 클 경우
+* `background-position` : 배경 이미지 위치 설정, **size와 함께 무조건 함께 사용하기, x y순서로 작성**
+* `background-attachment` : 배경 이미지 스크롤 속성, 스크롤 이동 시 이미지 고정시키고 싶을 때만 사용
+* (위) 배경 속성 작성 시 주의사항, 배경 이미지는 일반 이미지 태그와 다르게 요소의 크기가 자동으로 연장되지 않으므로 **반드시 width, height 크기를 함께 작성해야 함**
+## font
+* `font-family` : 글꼴 설정, 2개 이상 글꼴 작성하기
+* `font-size` ; 글자 크기, px -> em으로 전환해서 작성하기
+* `font-weight` : 글자 굵기, 보통(400) +- 100 설정
+* `letter-spacing` : 자간, -2% -> -0.02em
+* `line-height` : 행간, 100% -> 1, 150% -> 1.5
+* `color` : 글자 색상
+## box
+* `border` : **두께 모양 색상** 순서로 작성 예) 1px solid #000; 세미콜론은 맨 뒤
+* `padding` : 피그마의 오토레이아웃 패딩과 동일, **부모와 지식 사이 안쪽 여백**
+* `margin` : 피그마의 오토레이아웃 간격과 동일, **형제와 형제 사이 바깥쪽 여백**
+* `width` ; 가로크기 (px, %, vw 단위 사용 가능)
+    * 피그마 w 내용에 맞추기 설정 시 예) width:max-content;
+    * 피그마 w 채우기 설정 시 예) width:100%;
+    * 피그마 w 고정값(숫자 직접 입력 시) 설정 시 예) width:500px;
+* `height` : 세로크기 (위 width 설명과 같음)
+* `border-radius` : 모서리 둥글기(피그마의 모서리 반경과 같음), px 단위 사용하기
+## layout
+### 수평, 수직 정렬하기
+* `text-align` : 수평정렬(left, center, right, justify)
+* `line-height` : 글자가 1줄이고 높이가 고정되어있을 때 높이값 px를 넣어 수직중앙정렬 설정
+### position
+#### position:absolute:
+* 피그마에서 **오토레이아웃무시** 기능으로 **부모프레임 위치에서 상대적으로 위치를 맞췄을 때** 사용
+1. 태그 상의 부모 후보들 중에(부모, 조상 모두 포함) 원하는 기준 대상을 position 속성으로 설정한다.
+2. (1)번 기준 설정 완료 후 실제 움직이고 싶은 대상에 `absolute`를 설정해서 `left, top, right, bottom` 선택옵션을 통해 위치를 이동한다.
+#### position:fixed;
+* 피그마에서 **오토레이아웃무시 -> 프로토타입 위치(고정) -> 좌표설정**한 경우
+1. body 태그의 자식 위치로 원하는 고정 목적 태그를 작성한다.
+2. body는 기본구조태그로 `position:relative` 설정이 필요없다.
+3. (1)번에서 작성한 태그에 `position:fixed:`와 가까운 좌표값을 입력한다.
